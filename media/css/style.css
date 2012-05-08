@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* === Author: FABIAN CARLOS ::: email: fabian.pow@gmail.com === */
+
+/* ====== PRESETS ======= */
+* { margin:0px; padding:0px; }
+
+html { font-size: 80%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased; -o-font-smoothing: antialiased; -ms-font-smoothing: antialiased;font-smoothing: antialiased; }
+
+html, button, input, select, textarea { font-family: sans-serif; color: #222; }
+body { margin: 0; font-size: 1em; line-height: 1.4; }
+
+/* ======== HTML5 display definitions ======== */
+article, aside, figcaption, figure, footer, header, nav, hgroup ,section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+body { margin:0px; padding:0px; background: #f5f5f5 url('../images/blog_background.png') repeat 0 0; height:100%; width:100%; top:0; left:0; }
+
+/* Text Font and Color CUSTOM */
+body, button, input, select, textarea { font-family: "Trebuchet MS", Tahoma, sans-serif; color:#474646; }
+
+/* text selecteds CUSTOM */
+::-moz-selection { background: #444444; color: #ffffff; text-shadow: none; }
+::selection { background: #444444; color: #ffffff; text-shadow: none; }
+
+abbr[title]{ cursor: help; }
+label { cursor: pointer; }
+
+b, strong { font-weight: bold; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; }
+figure { margin: 0; }
+
+form { margin: 0; }
+
+fieldset { border: 0; margin: 0; padding: 0; }
+
+legend { border: 0; *margin-left: -7px; padding: 0; }
+
+button, input { line-height: normal; *overflow: visible; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+textarea { overflow: auto; vertical-align: top; }
+
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+a { text-decoration: none;}
+
+hr { margin-bottom: 10px;}
+
+/* fix floats in floated elements & fix to a element to a block */
+.clear{ clear: both; }
+.block { display: block; }
+.left { float: left; }
+.right { float:right; }
+.red_mark { color: #db2c23; }
+
+/* remove the highlight on a html input text element */
+textarea:focus{ outline: none;  }
+input:focus { outline: none; }
+select:focus { outline: none; }
+
+/* =========== END PRESETS ============== */
+
+
+
