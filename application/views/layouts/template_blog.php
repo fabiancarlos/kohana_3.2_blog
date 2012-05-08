@@ -4,8 +4,6 @@
 	<meta charset="utf-8" />
 	<meta name="description" content=" <?php echo $description; ?>" />
 	<title><?php echo $site_name; ?></title>
-
-	<link rel="shortcut icon" href="<?php echo $shortcut_icon; ?>" />
 	
 	<?php foreach ($styles as $style): ?>
 		<link rel="stylesheet" href="<?php echo URL::base(); ?>media/css/<?php echo $style; ?>.css" type="text/css" media="screen" />
