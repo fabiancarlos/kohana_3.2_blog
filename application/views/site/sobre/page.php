@@ -3,7 +3,7 @@
 
 <h2>Apenas um simples exemplo de um blog usando o framework kohana</h2>
 
-<p>Aqui estarei desenvolvendo um simples exemplo de um blog usando o framework kohana, apenas para apresentação.</p>
+<p>Aqui estarei desenvolvendo um simples exemplo de um blog usando o framework kohana.</p>
 
 <p>Alguns esclarecimentos:</p>
 

@@ -1,6 +1,6 @@
 ### Apenas um simples exemplo de um blog usando o framework kohana
 
-Aqui estarei desenvolvendo um simples exemplo de um blog usando o framework kohana, apenas para apresentação.
+Aqui estarei desenvolvendo um simples exemplo de um blog usando o framework kohana.
 
 Alguns esclarecimentos:
 * Não me preocuparei muito com a parte visual, estarei focado apenas no back-end.
