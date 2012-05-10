@@ -90,6 +90,8 @@ select:focus { outline: none; }
 
 /*==posts==*/
 
+#listar_posts { margin-bottom: 40px; }
+
 #listar_posts dl.post{ display: block; color: #555; border-bottom:1px solid #ccc; margin-bottom: 8px; }
 
 #listar_posts dl.post dt{ font-size: 26px; line-height:28px; }
@@ -114,6 +116,8 @@ select:focus { outline: none; }
 
 /*==POSTAGENS==*/
 
+#postagens { margin-bottom: 40px; }
+
 #postagens p{ margin: 10px 0px; }
 
 #postagens table{ width:500px; }
@@ -121,4 +125,8 @@ select:focus { outline: none; }
 #postagens table tr td{ text-align: center; }
 
 #postagens .paginacao { font-size: 22px; text-align: center; margin: 20px; }
+
+#postagens  input[type="text"]{ font-size: 15px; padding: 4px 2px; }
+#postagens  textarea{ font-size: 15px; padding: 4px 2px; }
+#postagens  input[type="submit"]{ font-size: 15px; padding: 6px 6px;  }
 

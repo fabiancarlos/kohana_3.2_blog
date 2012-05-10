@@ -3,7 +3,7 @@
 
 <h2>CRUD Posts</h2>
 
-<p>=========================== Listar posts ============================</p>
+<p>=============================== Listar ================================</p>
 
 <table cellspacing="0" cellpadding="0">
 	 <thead><th>nº</th> <th>titulo</th> <th>cadastro</th> <th>ações</th></thead>
