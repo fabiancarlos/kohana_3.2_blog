@@ -1,5 +1,3 @@
-# Kohana PHP Framework, version 3.2 (development)
+## Seja bem vindo a um simples exemplo de um blog usando o framework kohana
 
-This is the current development version of [Kohana](http://kohanaframework.org/).
-
-For the most current release, see the 3.1/master branch.
+Aqui estarei apenas estarei desenvolvendo um pequeno exemplo simples de um blog.
