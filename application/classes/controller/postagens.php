@@ -2,19 +2,44 @@
 
 class Controller_Postagens extends Controller_ApplicationBlog {
 
+	protected $_redirect = "../postagens";
+
 	public function action_index(){	
 
+		$posts = ORM::factory('post');
 
+		$count_all = $posts->count_all();
 
-		$content = View::factory('site/postagens/page');
+		/* Pagination */
+		$pagination = Pagination::factory(array(
+			'current_page'      => array('source' => 'query_string', 'key' => 'page'),
+			'total_items'       => $count_all,
+			'items_per_page'    => 2,
+			'view'              => 'pagination/basic', 
+			'auto_hide'         => TRUE,
+			'first_page_in_url' => TRUE,
+			));
+		
+		$pagination_links = $pagination->render();
+
+		$posts = $posts
+			->limit($pagination->items_per_page)
+			->offset($pagination->offset)
+			->find_all();
+
+		$content = View::factory('site/postagens/page')
+				->bind('posts', $posts)
+				->bind('pagination_links', $pagination_links);
 
 		$this->template->content = $content;
 	}
 
 	public function action_novo(){
 
+		# pega a action que está sendo utilizada
 		$action = $this->request->action();
 
+		# apenas para inicializar
 		$post = array();
 
 		$content = View::factory('site/postagens/novo')
@@ -23,6 +48,40 @@ class Controller_Postagens extends Controller_ApplicationBlog {
 
 		$this->template->content = $content;
 
+		if ($_POST && isset($_POST['salvar'])) {
+
+			$time_now = new DateTime();
+
+			$post = ORM::factory('post');
+			
+			$post->titulo =  (string) Arr::get($_POST, 'titulo');
+			$post->chamada = (string) Arr::get($_POST, 'chamada');
+			$post->texto = (string) Arr::get($_POST, 'texto');
+			$post->data_registro = $time_now->format('Y-m-d H:i:s');
+
+			$post->save();
+
+
+			$redirect = URL::site($this->_redirect);
+			$this->request->redirect($redirect);
+		}
+		if($_POST && isset($_POST['cancelar'])){
+
+			$redirect = URL::site($this->_redirect);
+			$this->request->redirect($redirect);
+		}
+
+	}
+
+	public function action_deletar(){
+
+		$id = (string) Arr::get($_GET, 'id');
+
+		$post = ORM::factory('post', $id);
+		$post->delete();
+		
+		$redirect = URL::site($this->_redirect);
+		$this->request->redirect($redirect);
 	}
 
 } 

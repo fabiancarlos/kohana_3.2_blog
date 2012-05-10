@@ -121,10 +121,21 @@ select:focus { outline: none; }
 #postagens p{ margin: 10px 0px; }
 
 #postagens table{ width:500px; }
-#postagens table tr{ height:20px; }
-#postagens table tr td{ text-align: center; }
+#postagens table th{ border-bottom: 1px solid #ccc; }
+#postagens table th.titulo{ width:220px; padding: 0px 4px; text-align: left; }
 
-#postagens .paginacao { font-size: 22px; text-align: center; margin: 20px; }
+#postagens table tr{ height:30px;  }
+#postagens table tr td{ text-align: center; border-bottom: 1px solid #ccc; }
+#postagens table tr td.titulo{ width:220px; padding: 0px 4px; text-align: left; }
+
+#postagens table tr td a{ color: #333; }
+#postagens table tr td a.novo{ color: green; }
+#postagens table tr td a.editar{ color: blue; }
+#postagens table tr td a.deletar{ color: red; }
+
+#postagens .pagination .go_to{ font-size: 28px; color: #333; }
+#postagens .pagination { font-size: 22px; text-align: center; color: #aaa; word-spacing: 10px; margin: 20px; }
+#postagens .pagination a{ color: #333; }
 
 #postagens  input[type="text"]{ font-size: 15px; padding: 4px 2px; }
 #postagens  textarea{ font-size: 15px; padding: 4px 2px; }

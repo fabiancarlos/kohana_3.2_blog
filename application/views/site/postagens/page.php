@@ -6,46 +6,30 @@
 <p>=============================== Listar ================================</p>
 
 <table cellspacing="0" cellpadding="0">
-	 <thead><th>nº</th> <th>titulo</th> <th>cadastro</th> <th>ações</th></thead>
+	 <thead><th>nº</th> <th class="titulo">titulo</th> <th>cadastro</th> <th>ações</th></thead>
 	 <tbody>
-	 	<tr>
-	 		<td>78</td>
-	 		<td>Lorem ipsum dolor sit amet...</td>
-	 		<td>23/07/2012</td>
-	 		<td>
-	 			<a href="<?php echo URL::site('postagens/novo'); ?>" title="novo">novo -</a>
-	 			<a href="<?php echo URL::site('postagens/editar'); ?>" title="editar">editar -</a>
-	 			<a href="<?php echo URL::site('postagens/excluir'); ?>" title="deletar">excluir</a>
-	 		</td>
-	 	</tr>
+	 	<?php foreach ($posts as $post): ?>
+	 		<tr>
+		 		<td><?php echo $post->id; ?></td>
+		 		<td class="titulo"><?php echo $post->titulo; ?></td>
+		 		<td><?php $data_registro = new DateTime($post->data_registro);
+			$data_registro = $data_registro->format('d/m/Y'); 
 
-	 	<tr>
-	 		<td>78</td>
-	 		<td>Lorem ipsum dolor sit amet...</td>
-	 		<td>23/07/2012</td>
-	 		<td>
-	 			<a href="<?php echo URL::site('postagens/novo'); ?>" title="novo">novo -</a>
-	 			<a href="<?php echo URL::site('postagens/editar'); ?>" title="editar">editar -</a>
-	 			<a href="<?php echo URL::site('postagens/excluir'); ?>" title="deletar">excluir</a>
-	 		</td>
-	 	</tr>
+			echo $data_registro; ?></td>
+		 		<td>
+		 			<a href="<?php echo URL::site('postagens/novo'); ?>" class="novo" title="novo">novo -</a>
+		 			<a href="<?php echo URL::site('postagens/editar/?id=') . $post->id ; ?>" class="editar" title="editar">editar -</a>
+		 			<a href="<?php echo URL::site('postagens/deletar/?id=') . $post->id ; ?>" class="deletar" title="deletar">deletar</a>
+		 		</td>
+		 	</tr>
 
-	 	<tr>
-	 		<td>78</td>
-	 		<td>Lorem ipsum dolor sit amet...</td>
-	 		<td>23/07/2012</td>
-	 		<td>
-	 			<a href="<?php echo URL::site('postagens/novo'); ?>" title="novo">novo -</a>
-	 			<a href="<?php echo URL::site('postagens/editar'); ?>" title="editar">editar -</a>
-	 			<a href="<?php echo URL::site('postagens/excluir'); ?>" title="deletar">excluir</a>
-	 		</td>
-	 	</tr>
-
+	 	<?php endforeach ?>
 	 </tbody>
 </table>
 
 
-<div class="paginacao">« 1 2 3 4 »</div>
+<?php echo $pagination_links; ?>
+
 
 </div>
 
