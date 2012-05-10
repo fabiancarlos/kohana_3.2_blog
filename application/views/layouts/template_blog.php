@@ -16,13 +16,6 @@
 		<script src="<?php echo URL::base(); ?>media/js/<?php echo $script; ?>.js" /></script>
 	<?php endforeach ?>	
 	
-	<script>
-		var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
-		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-		s.parentNode.insertBefore(g,s)}(document,'script'));
-	</script>
-
 	<!--[if IE]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
 	<!--[if lt IE 7 ]>
 		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
@@ -31,7 +24,16 @@
 </head>
 <body>
 
+<div id="todo">
+
+<?php echo View::factory('site/common/header'); ?>
+<?php echo View::factory('site/common/menu'); ?>
+
 <?php echo $content; ?>
+
+<?php echo View::factory('site/common/footer'); ?>
+
+</div>
 
 </body>
 </html>

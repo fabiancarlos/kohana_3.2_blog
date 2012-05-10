@@ -2,15 +2,13 @@
 
 class Controller_Home extends Controller_ApplicationBlog {
 
-	public function action_index(){
-		
-		$hello = 'hello xomano!!!';
+	public function action_index(){		
 
-		$content = View::factory('site/home/index')
-				->bind('hello', $hello);
+		$content = View::factory('site/home/page');
 
 
 		$this->template->content = $content;
 	}
 
-} // End Welcome
+} 
+
