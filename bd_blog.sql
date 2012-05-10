@@ -1,0 +1,15 @@
+
+
+-- POSTS
+CREATE TABLE IF NOT EXISTS `posts`(
+`id` INT(8) NOT NULL AUTO_INCREMENT,
+`nome` VARCHAR(30) NOT NULL,
+`texto` TEXT NOT NULL,
+`user_admin`  VARCHAR(50),
+`data_registro` DATETIME,
+PRIMARY KEY(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
