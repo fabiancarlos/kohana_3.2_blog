@@ -84,8 +84,10 @@ if (isset($_SERVER['KOHANA_ENV']))
  * - boolean  caching     enable or disable internal caching                 FALSE
  */
 Kohana::init(array(
-	'base_url'   => '/kohana_3.2_blog/',
-	'index_file' => ''
+	'base_url'   => Kohana::$environment === Kohana::DEVELOPMENT ? '/kohana_3.2_blog/' :  '/nome_dohost_aqui/',
+	'caching'    => Kohana::$environment === Kohana::PRODUCTION,
+	'profile'    => Kohana::$environment !== Kohana::PRODUCTION,
+    'index_file' => FALSE,
 ));
 
 /**
@@ -118,6 +120,12 @@ Kohana::modules(array(
  * defaults for the URI.
  */
 
+// FOR PAGINATION INT POSTAGENS
+Route::set('postagens', '<controller>')
+	->defaults(array(		
+		'controller' => 'postagens',
+		'action'     => 'index',
+	));
 
 Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
