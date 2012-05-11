@@ -5,7 +5,7 @@
 -- POSTS
 CREATE TABLE IF NOT EXISTS `posts`(
 `id` INT(8) NOT NULL AUTO_INCREMENT,
-`titulo` VARCHAR(30) NOT NULL,
+`titulo` VARCHAR(200) NOT NULL,
 `chamada` TEXT NOT NULL,
 `texto` TEXT NOT NULL,
 `data_registro` DATETIME,

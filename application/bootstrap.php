@@ -120,8 +120,13 @@ Kohana::modules(array(
  * defaults for the URI.
  */
 
-// FOR PAGINATION INT POSTAGENS
-Route::set('postagens', '<controller>')
+// FOR PAGINATION 
+Route::set('home', 'home')
+	->defaults(array(		
+		'controller' => 'home',
+		'action'     => 'index',
+	));
+Route::set('postagens', 'postagens')
 	->defaults(array(		
 		'controller' => 'postagens',
 		'action'     => 'index',

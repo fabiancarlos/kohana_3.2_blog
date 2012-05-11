@@ -82,11 +82,11 @@ select:focus { outline: none; }
 
 
 /*==MENU==*/
-#menu nav { width:500px; height:30px;  }
-#menu nav ul li{ float: left; list-style: none; font-size: 11px; margin-right: 20px; }
-#menu nav ul li a{ position: relative; color: #444; }
-#menu nav ul li a:hover{ color: #999; }
-#menu nav ul li a:active{ bottom: -2px;}
+#menu nav { width:500px; height:30px; margin: 10px 0px;  }
+#menu nav ul li{ float: left; list-style: none; font-size: 11px;  }
+#menu nav ul li a{ position: relative; color: #444; padding: 8px 15px; background-color: #DDD; }
+#menu nav ul li a:hover{ color: #666; background-color: #d6d6d6; }
+#menu nav ul li a:active{ bottom: -3px; color: #888; background-color: #d4d4d4;}
 
 /*==posts==*/
 
@@ -103,7 +103,9 @@ select:focus { outline: none; }
 #listar_posts dl.post dd.mais a{ display: block; font-size: 22px; color: #999; padding: 0px 0px 2px 0px; }
 #listar_posts dl.post dd.mais a:hover{ color: #333;  }
 
-#listar_posts .paginacao { font-size: 22px; text-align: center; margin: 20px; }
+#listar_posts .pagination .go_to{ font-size: 28px; color: #333; }
+#listar_posts .pagination { font-size: 22px; text-align: center; color: #aaa; word-spacing: 10px; margin: 20px; }
+#listar_posts .pagination a{ color: #333; }
 
 
 /*==SOBRE==*/

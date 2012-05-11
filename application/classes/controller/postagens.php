@@ -14,7 +14,7 @@ class Controller_Postagens extends Controller_ApplicationBlog {
 		$pagination = Pagination::factory(array(
 			'current_page'      => array('source' => 'query_string', 'key' => 'page'),
 			'total_items'       => $count_all,
-			'items_per_page'    => 2,
+			'items_per_page'    => 3,
 			'view'              => 'pagination/basic', 
 			'auto_hide'         => TRUE,
 			'first_page_in_url' => TRUE,
@@ -25,6 +25,7 @@ class Controller_Postagens extends Controller_ApplicationBlog {
 		$posts = $posts
 			->limit($pagination->items_per_page)
 			->offset($pagination->offset)
+			->order_by('id', 'DESC')
 			->find_all();
 
 		$content = View::factory('site/postagens/page')
@@ -42,7 +43,7 @@ class Controller_Postagens extends Controller_ApplicationBlog {
 		# apenas para inicializar
 		$post = array();
 
-		$content = View::factory('site/postagens/novo')
+		$content = View::factory('site/postagens/form')
 				->bind('action', $action)
 				->bind('post', $post);
 
@@ -71,6 +72,50 @@ class Controller_Postagens extends Controller_ApplicationBlog {
 			$this->request->redirect($redirect);
 		}
 
+	}
+
+	public function action_editar(){
+
+		# pega a action que está sendo utilizada
+		$action = $this->request->action();
+
+		# get the id to where condition
+		$id = (string) Arr::get($_GET, 'id');
+
+		$posts = ORM::factory('post');
+
+		$post = $posts
+				->where('id', '=', $id)
+				->find();
+
+		$content = View::factory('site/postagens/form')
+				->bind('action', $action)
+				->bind('post', $post);
+
+		$this->template->content = $content;
+
+		if ($_POST && isset($_POST['salvar'])) {
+
+			$time_now = new DateTime();
+
+			$post = ORM::factory('post', $id);
+			
+			$post->titulo =  (string) Arr::get($_POST, 'titulo');
+			$post->chamada = (string) Arr::get($_POST, 'chamada');
+			$post->texto = (string) Arr::get($_POST, 'texto');
+
+			$post->update();
+
+			$redirect = URL::site($this->_redirect);
+			$this->request->redirect($redirect);
+		}
+
+
+		if($_POST && isset($_POST['cancelar'])){
+
+			$redirect = URL::site($this->_redirect);
+			$this->request->redirect($redirect);
+		}
 	}
 
 	public function action_deletar(){
