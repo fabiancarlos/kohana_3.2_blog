@@ -74,6 +74,9 @@ select:focus { outline: none; }
 
 #todo { width:500px; margin: 0 auto; }
 
+
+
+
 /*== HEADER ==*/
 #header header { height:80px;  }
 
@@ -83,10 +86,12 @@ select:focus { outline: none; }
 
 /*==MENU==*/
 #menu nav { width:500px; height:30px; margin: 10px 0px;  }
-#menu nav ul li{ float: left; list-style: none; font-size: 11px;  }
-#menu nav ul li a{ position: relative; color: #444; padding: 8px 15px; background-color: #DDD; }
-#menu nav ul li a:hover{ color: #666; background-color: #d6d6d6; }
-#menu nav ul li a:active{ bottom: -3px; color: #888; background-color: #d4d4d4;}
+#menu nav ul li{ float: left; list-style: none; font-size: 11px;     }
+#menu nav ul li a{ position: relative; color: #444; padding: 8px 15px; background-color: #DDD;  -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; 
+-o-transition: all 0.2s linear; transition: all 0.2s linear; }
+#menu nav ul li a:hover{ color: #666; background-color: #d6d6d6; top:4px; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; 
+-o-transition: all 0.2s linear; transition: all 0.2s linear;  }
+#menu nav ul li a:active{ top:4px; color: #888; background-color: #c4c4c4;}
 
 /*==posts==*/
 
@@ -100,8 +105,10 @@ select:focus { outline: none; }
 
 #listar_posts dl.post dd.texto{ font-size: 14px; margin-top: 5px; }
 
-#listar_posts dl.post dd.mais a{ display: block; font-size: 22px; color: #999; padding: 0px 0px 2px 0px; }
-#listar_posts dl.post dd.mais a:hover{ color: #333;  }
+#listar_posts dl.post dd.mais a{  font-size: 22px; color: #bbb; padding: 0px 0px 2px 0px; -webkit-transition: all 0.2s linear; -moz-transition: all 0.3s linear; 
+-o-transition: all 0.3s linear; transition: all 0.3s linear;  }
+#listar_posts dl.post dd.mais a:hover{ color: #333; -webkit-transition: all 0.2s linear; -moz-transition: all 0.3s linear; 
+-o-transition: all 0.3s linear; transition: all 0.3s linear; }
 
 #listar_posts .pagination .go_to{ font-size: 28px; color: #333; }
 #listar_posts .pagination { font-size: 22px; text-align: center; color: #aaa; word-spacing: 10px; margin: 20px; }
@@ -120,7 +127,7 @@ select:focus { outline: none; }
 
 #postagens { margin-bottom: 40px; }
 
-#postagens p{ margin: 10px 0px; }
+#postagens .cabecalho{ width:500px; height:40px; margin: 10px 0px; padding-top: 4px; font-size: 25px; text-align: center; border:1px dashed #aaa; }
 
 #postagens table{ width:500px; }
 #postagens table th{ border-bottom: 1px solid #ccc; }

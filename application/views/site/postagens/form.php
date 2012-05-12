@@ -1,11 +1,9 @@
 
 <div id="postagens">
 
-<h2>CRUD Posts</h2>
+<?php $action = ($action == 'novo') ? 'novo post' : 'editar post'; ?>
 
-<?php $action = ($action == 'novo') ? 'NOVO POST' : 'EDITAR POST'; ?>
-
-<p>=== <b> <?php echo $action; ?> </b> ===</p>
+<p class="cabecalho"><?php echo $action; ?></p>
 
 <?php foreach ($post as $post): ?>
 	<?php $post = $post; ?>

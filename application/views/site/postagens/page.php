@@ -1,9 +1,7 @@
 
 <div id="postagens">
 
-<h2>CRUD Posts</h2>
-
-<p>=============================== Listar ================================</p>
+<p class="cabecalho">listar posts</p>
 
 <table cellspacing="0" cellpadding="0">
 	 <thead><th>nº</th> <th class="titulo">titulo</th> <th>cadastro</th> <th>ações</th></thead>
@@ -17,9 +15,9 @@
 
 			echo $data_registro; ?></td>
 		 		<td>
-		 			<a href="<?php echo URL::site('postagens/novo'); ?>" class="novo" title="novo">novo -</a>
-		 			<a href="<?php echo URL::site('postagens/editar/?id=') . $post->id ; ?>" class="editar" title="editar">editar -</a>
-		 			<a href="<?php echo URL::site('postagens/deletar/?id=') . $post->id ; ?>" class="deletar" title="deletar">deletar</a>
+		 			<a href="<?php echo URL::site('postagens/novo'); ?>" class="novo" title="novo post">novo -</a>
+		 			<a href="<?php echo URL::site('postagens/editar/?id=') . $post->id ; ?>" class="editar post" title="editar">editar -</a>
+		 			<a href="<?php echo URL::site('postagens/deletar/?id=') . $post->id ; ?>" class="deletar post" title="deletar">deletar</a>
 		 		</td>
 		 	</tr>
 
